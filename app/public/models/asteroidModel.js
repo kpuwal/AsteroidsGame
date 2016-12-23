@@ -1,0 +1,83 @@
+function Asteroid(position, size) {
+
+  if(position) {
+    this.position = position.copy();
+  } else {
+    this.position = createVector(random(width),random(height));
+  }
+
+  if(size) {
+    this.r = size * 0.5;
+  } else {
+    this.r = random(25,35);
+  }
+
+  this.velocity = p5.Vector.random2D();
+  this.surfacePoints = floor(random(5,15));
+  this.offset = [];
+
+  for(var i=0; i<this.surfacePoints; i++){
+    this.offset[i] = random(-this.r*0.5, this.r*0.5);
+  }
+
+  this.update = function() {
+    this.position.add(this.velocity);
+  }
+
+  this.render = function() {
+    push();
+    fill('#1d1d1d');
+    stroke('#fff');
+    translate(this.position.x, this.position.y);
+
+    beginShape();
+    for(var i=0; i<this.surfacePoints; i++){
+      var angle = map(i,0,this.surfacePoints,0,TWO_PI);
+      var r = this.r + this.offset[i];
+      var x = r * cos(angle);
+      var y = r * sin(angle);
+      vertex(x,y);
+    }
+    endShape(CLOSE);
+    pop();
+  }
+
+  this.renderDark = function() {
+    push();
+    fill('#1d1d1d');
+    stroke('#000');
+    translate(this.position.x, this.position.y);
+
+    beginShape();
+    for(var i=0; i<this.surfacePoints; i++){
+      var angle = map(i,0,this.surfacePoints,0,TWO_PI);
+      var r = this.r + this.offset[i];
+      var x = r * cos(angle);
+      var y = r * sin(angle);
+      vertex(x,y);
+    }
+    endShape(CLOSE);
+    pop();
+  }
+
+  this.breakup = function() {
+    var newAsteroids = [];
+    newAsteroids[0] = new Asteroid(this.position, this.r);
+    newAsteroids[1] = new Asteroid(this.position, this.r);
+    return newAsteroids;
+  }
+
+  this.edges = function() {
+    if(this.position.x > width + this.r){
+      this.position.x = -this.r;
+    } else if(this.position.x < -this.r){
+      this.position.x = width + this.r;
+    }
+
+    if(this.position.y > height + this.r){
+      this.position.y = -this.r;
+    } else if(this.position.y < -this.r){
+      this.position.y = height + this.r;
+    }
+  }
+}

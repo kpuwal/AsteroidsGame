@@ -1,0 +1,27 @@
+{
+  "name": "asteroids_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/asteroids.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app/asteroids.js"
+  },
+
+  "dependencies": {
+    "express": "^4.14.0",
+
+    "node-persist": "0.0.11"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  },
+
+  "keywords": [
+    "shooting",
+    "asteroids",
+    "game"
+  ],
+  "author": "kasiap",
+  "license": "ISC"
+}
