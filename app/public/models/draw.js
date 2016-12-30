@@ -1,5 +1,6 @@
 function draw() {
   background('#1d1d1d');
+  text("sensor value: " + inData, 30, 30);
 
   for(var i=0;i<starfield.length; i++) {
     starfield[i].render();
@@ -39,7 +40,32 @@ function draw() {
         }
       }
     }
-    console.log(lasers);
+  }
+
+  for (var i = biglasers.length - 1; i >= 0; i--) {
+    biglasers[i].render();
+    biglasers[i].update();
+    if (biglasers[i].offscreen()) {
+      biglasers.splice(i, 1);
+    } else {
+      for (var j = asteroids.length - 1; j >= 0; j--) {
+        if (biglasers[i].hits(asteroids[j])) {
+          if (asteroids[j].r < 100) {
+
+            var newAsteroids = asteroids[j].expand();
+            newAsteroids.renderBlast();
+            asteroids = asteroids.concat(newAsteroids);
+          }
+          asteroids.splice(j, 1);
+          biglasers.splice(i, 1);
+          break;
+        }
+      }
+    }
+  }
+
+  if(inData > 70) {
+    biglasers.push(new BigLaser(ship.position, ship.heading));
   }
 
   ship.render();

@@ -42,10 +42,10 @@ function Asteroid(position, size) {
     pop();
   }
 
-  this.renderDark = function() {
+  this.renderBlast = function() {
     push();
-    fill('#1d1d1d');
-    stroke('#000');
+    fill('red');
+    stroke('red');
     translate(this.position.x, this.position.y);
 
     beginShape();
@@ -65,6 +65,10 @@ function Asteroid(position, size) {
     newAsteroids[0] = new Asteroid(this.position, this.r);
     newAsteroids[1] = new Asteroid(this.position, this.r);
     return newAsteroids;
+  }
+
+  this.expand = function() {
+    return new Asteroid(this.position, this.r *3);
   }
 
   this.edges = function() {

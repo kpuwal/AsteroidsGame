@@ -1,22 +1,21 @@
 {
   "name": "asteroids_game",
   "version": "1.0.0",
-  "description": "",
-  "main": "app/asteroids.js",
+  "description": "silly shoot asteroids game",
+  "main": "astroServer.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app/asteroids.js"
+    "start": "node astroServer.js /dev/cu.SLAB_USBtoUART"
   },
-
   "dependencies": {
     "express": "^4.14.0",
-
-    "node-persist": "0.0.11"
+    "node-persist": "0.0.11",
+    "serialport": "^4.0.7"
   },
   "devDependencies": {
     "jasmine": "^2.4.1"
   },
-
   "keywords": [
     "shooting",
     "asteroids",

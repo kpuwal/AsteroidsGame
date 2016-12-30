@@ -11,13 +11,23 @@ function Planet() {
   this.jupiter = function() {
     push();
       translate(this.position.x, this.position.y);
-      stroke('#0d0d0d');
+      stroke('#3d3d3d');
       strokeWeight(2);
-      fill('#0d0d0d');
+      fill('#3d3d3d');
       ellipse(0,0, this.r, this.r);
       stroke('#1d1d1d');
       strokeWeight(1);
       ellipse(-25, 15, 30, 15);
+      ellipse(-30, 15, 10, 5);
+      noFill();
+      arc(-30, 15, 60, 20, PI, TWO_PI + QUARTER_PI);
+      arc(0, 0, 170, 10, PI, TWO_PI);
+      arc(0, -50, 140, 10, PI, TWO_PI);
+      arc(0, -30, 160, 10, PI, TWO_PI);
+      arc(0, -20, 165, 10, PI, TWO_PI);
+      arc(0, 40, 160, 10, PI, TWO_PI);
+      arc(0, 50, 150, 10, PI, TWO_PI);
+      arc(0, 55, 160, 10, PI, TWO_PI);
     pop();
   }
 

@@ -21,20 +21,18 @@ function Ship() {
 
   this.render = function() {
     push();
-    translate(this.position.x, this.position.y);
-    rotate(this.heading + PI/2);
-    fill('#fff');
-    stroke('#fff');
-    // rect(-this.r+3, -this.r/2, 12,12);
-    triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
-    rect(1,6, 5,5);
-    rect(-7,6, 5,5);
-    fill('#1d1d1d');
-    noStroke();
-    ellipse(0,4,7,7);
-    ellipse(0,-3,5,5);
-
-
+      translate(this.position.x, this.position.y);
+      rotate(this.heading + PI/2);
+      fill('#fff');
+      stroke('#fff');
+      // rect(-this.r+3, -this.r/2, 12,12);
+      triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
+      rect(1,6, 5,5);
+      rect(-7,6, 5,5);
+      fill('#1d1d1d');
+      noStroke();
+      ellipse(0,4,7,7);
+      ellipse(0,-3,5,5);
     pop();
   }
 
