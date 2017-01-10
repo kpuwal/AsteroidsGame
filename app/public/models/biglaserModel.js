@@ -10,7 +10,7 @@ function BigLaser(shipPosition, angle) {
   this.render = function() {
     push();
     translate(this.position.x, this.position.y);
-    stroke('yellow');
+    stroke('#62B1F6');
     noFill();
     ellipse(0,0,10,10);
     ellipse(0,0,5,5);

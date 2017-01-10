@@ -55,6 +55,17 @@ function Ship() {
     pop();
   }
 
+  this.hits = function(asteroid) {
+    var distance = dist(this.position.x, this.position.y, asteroid.position.x, asteroid.position.y);
+
+    if(distance < asteroid.r) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
   this.edges = function() {
     if(this.position.x > width + this.r){
       this.position.x = -this.r;

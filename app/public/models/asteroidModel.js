@@ -26,26 +26,14 @@ function Asteroid(position, size) {
 
   this.render = function() {
     push();
-    fill('#1d1d1d');
-    stroke('#fff');
-    translate(this.position.x, this.position.y);
-
-    beginShape();
-    for(var i=0; i<this.surfacePoints; i++){
-      var angle = map(i,0,this.surfacePoints,0,TWO_PI);
-      var r = this.r + this.offset[i];
-      var x = r * cos(angle);
-      var y = r * sin(angle);
-      vertex(x,y);
+    if (this.r < 35) {
+      fill('#1d1d1d');
+      stroke('#fff');
+    } else {
+      fill('#1d1d1d');
+      strokeWeight(10);
+      stroke('#62B1F6');
     }
-    endShape(CLOSE);
-    pop();
-  }
-
-  this.renderBlast = function() {
-    push();
-    fill('red');
-    stroke('red');
     translate(this.position.x, this.position.y);
 
     beginShape();
@@ -62,9 +50,14 @@ function Asteroid(position, size) {
 
   this.breakup = function() {
     var newAsteroids = [];
-    newAsteroids[0] = new Asteroid(this.position, this.r);
-    newAsteroids[1] = new Asteroid(this.position, this.r);
-    return newAsteroids;
+    if (this.r >35 && this.r <45) {
+      eggPoints.push(new Egg(this.position));
+      this.split(newAsteroids);
+      return newAsteroids;
+    } else {
+      this.split(newAsteroids);
+      return newAsteroids;
+    }
   }
 
   this.expand = function() {
@@ -83,5 +76,10 @@ function Asteroid(position, size) {
     } else if(this.position.y < -this.r){
       this.position.y = height + this.r;
     }
+  }
+
+  this.split = function(newAsteroids) {
+    newAsteroids[0] = new Asteroid(this.position, this.r);
+    newAsteroids[1] = new Asteroid(this.position, this.r);
   }
 }

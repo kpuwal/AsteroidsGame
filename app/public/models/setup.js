@@ -1,14 +1,13 @@
 var ship;
 var asteroids = [];
-
 var starfield = [];
 var planets = [];
 var lasers = [];
 var biglasers = [];
+var eggPoints = [];
 
 var inString, inData, sensor;
 var portName = '/dev/cu.SLAB_USBtoUART';
-// var portName = process.argv[2];
 
 var options = { baudrate: 9600 };
 
@@ -22,7 +21,6 @@ function setup() {
   serial.on('data', serialEvent);
   serial.on('error', serialError);
   serial.on('close', portClose);
-  // serial.list();
   serial.open(portName);
 
   ship = new Ship();
@@ -37,7 +35,7 @@ function setup() {
 
   for(var i=0; i<8; i++) {
     asteroids.push(new Asteroid());
-  }
+  }  
 }
 
 function serverConnected() {
@@ -52,7 +50,7 @@ function serialEvent() {
   // inData = serial.readLine(';');
   inString = serial.readStringUntil(';');
   sensor = split(inString, ',');
-inData = Number(sensor[0]);
+  inData = Number(sensor[0]);
   // console.log(sensor);
   console.log(sensor[0]);
   console.log(sensor[1]);

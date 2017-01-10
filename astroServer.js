@@ -8,7 +8,7 @@ var port = process.env.PORT || 3000;
 var storage = require('node-persist');
 
 serialserver.start();
-console.log(" -->  Glove connected to serial port: " + portName);
+console.log(" -->  Glove will connect to serial port: " + portName);
 
 app.use(express.static('./app/public'));
 app.get('/', function (req, res) {
