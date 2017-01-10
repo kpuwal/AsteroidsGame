@@ -1,4 +1,4 @@
-var ships = [];
+var ship;
 var asteroids = [];
 var starfield = [];
 var planets = [];
@@ -6,7 +6,7 @@ var lasers = [];
 var biglasers = [];
 var eggs = [];
 var lifePoints = [];
-var ship;
+var deadShip = false;
 
 var inString, inData, sensor;
 var portName = '/dev/cu.SLAB_USBtoUART';

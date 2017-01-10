@@ -32,8 +32,8 @@ function Asteroid(position, size) {
       fill('#1d1d1d');
       stroke('#fff');
     } else {
-      fill('red');
-      stroke('white');
+      fill(255,255,255, 50);
+      stroke('#fff');
     }
 
     beginShape();

@@ -94,9 +94,7 @@ function Ship() {
     this.heading += this.rotation;
   }
 
-  this.explodes = function() {
-    ship = null;
-    delete ship;
-    console.log(ship);
+  this.dies = function() {
+    deadShip = true;
   }
 }
