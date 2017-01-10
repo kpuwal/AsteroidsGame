@@ -1,11 +1,12 @@
-var ship;
+var ship, score;
 var asteroids = [];
 var starfield = [];
 var planets = [];
 var lasers = [];
 var biglasers = [];
 var eggs = [];
-var lifePoints = [];
+var lifePoints = [1,1,1];
+var asteroidPoints = 0;
 var deadShip = false;
 
 var inString, inData, sensor;
@@ -26,7 +27,6 @@ function setup() {
   serial.open(portName);
 
   ship = new Ship();
-  // ships.push(ship);
 
   for(var i=0; i<100; i++) {
     starfield.push(new Star());

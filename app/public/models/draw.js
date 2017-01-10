@@ -1,5 +1,7 @@
 function draw() {
   background('#1d1d1d');
+  fill(255,255,255,90);
+
   text("sensor value: " + inData, 30, 30);
 
     for(var i=0;i<starfield.length; i++) {
@@ -22,8 +24,8 @@ function draw() {
         } else {
           push();
             fill('red');
-            textSize(16);
-            text("G A M E    O V E R", width/2, height/2);
+            textAlign(CENTER);
+            text("G A M E   O V E R", width/2, height/2);
           pop();
           break
         }
@@ -63,6 +65,7 @@ function draw() {
               asteroids = asteroids.concat(newAsteroids);
             }
             asteroids.splice(j, 1);
+            asteroidPoints += 10;
             lasers.splice(i, 1);
             break;
           }
@@ -103,7 +106,15 @@ function draw() {
     ship.turn();
     ship.edges();
 
-    fill(255,255,255,90);
-    text("ships: " + lifePoints.length , 30, height - 30);
+    for (var i=0; i<lifePoints.length; i++) {
+      score = new Score(65+ 10*i, height - 14);
+      score.render();
+    }
 
+    push();
+      fill('#fff');
+      textSize(10);
+      text("ships:  ", 30, height - 10);
+      text("points:  " + asteroidPoints, width - 70, height -10);
+    pop();
 }

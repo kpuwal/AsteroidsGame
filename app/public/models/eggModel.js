@@ -16,7 +16,7 @@ function Egg(position){
     translate(this.position.x, this.position.y);
     fill('red');
     ellipse(0, 0, this.r, this.r);
-    fill('yellow');
+    fill('#fff');
     ellipse(0, 0, core, core);
     pop();
   }
