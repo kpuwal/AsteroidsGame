@@ -25,12 +25,11 @@ function Ship() {
       rotate(this.heading + PI/2);
       fill('#fff');
       stroke('#fff');
-      // rect(-this.r+3, -this.r/2, 12,12);
       triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
       rect(1,6, 5,5);
       rect(-7,6, 5,5);
-      fill('#1d1d1d');
       noStroke();
+      fill('#1d1d1d');
       ellipse(0,4,7,7);
       ellipse(0,-3,5,5);
     pop();
@@ -57,14 +56,21 @@ function Ship() {
 
   this.hits = function(asteroid) {
     var distance = dist(this.position.x, this.position.y, asteroid.position.x, asteroid.position.y);
-
-    if(distance < asteroid.r) {
+    if(distance < asteroid.r + this.r) {
       return true;
     } else {
       return false;
     }
   }
 
+  this.captures = function(egg) {
+    var distance = dist(this.position.x, this.position.y, egg.position.x, egg.position.y);
+    if(int(distance) == egg.r + this.r) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   this.edges = function() {
     if(this.position.x > width + this.r){
@@ -86,5 +92,11 @@ function Ship() {
 
   this.turn = function() {
     this.heading += this.rotation;
+  }
+
+  this.explodes = function() {
+    ship = null;
+    delete ship;
+    console.log(ship);
   }
 }

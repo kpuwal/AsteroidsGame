@@ -14,19 +14,34 @@ function draw() {
 
   for (var i=0; i<asteroids.length; i++) {
     if (ship.hits(asteroids[i])) {
-      console.log('ooops!');
+      ship.explodes();
+      if (lifePoints.length >= 1) {
+        ship = new Ship();
+        lifePoints.pop();
+      } else {
+        fill('red');
+        text("G A M E    O V E R", width/2, height/2);
+        break
+      }
     }
     asteroids[i].render();
     asteroids[i].update();
     asteroids[i].edges();
   }
 
-  if (eggPoints.length != 0) {
-    for(var i=0; i<eggPoints.length; i++){
-      eggPoints[i].render();
-      eggPoints[i].update();
-      if (eggPoints[i].offscreen()) {
-        eggPoints.splice(i, 1);
+  if (eggs.length != 0) {
+    for(var i=0; i<eggs.length; i++){
+      eggs[i].render();
+      eggs[i].update();
+      if (eggs[i].offscreen()) {
+        eggs.splice(i, 1);
+      } else {
+        for (var i=0; i<eggs.length; i++){
+          if (ship.captures(eggs[i])) {
+            eggs.splice(i,1);
+            lifePoints.push(1);
+          }
+        }
       }
     }
   }
@@ -80,5 +95,5 @@ function draw() {
   ship.update();
   ship.edges();
   fill(255,255,255,90);
-  text("ships: 3" , 30, height - 30);
+  text("ships: " + lifePoints.length , 30, height - 30);
 }

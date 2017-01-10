@@ -1,19 +1,23 @@
 function Egg(position){
   this.position = position.copy();
-  this.r = 20;
+  this.r = 38;
+  this.core = random(this.r/3, this.r/2);
   this.velocity = p5.Vector.random2D();
-  this.acceleration = (0.01, 0.01);
+  // this.acceleration = (0.001, 0.001);
 
   this.update = function() {
     this.position.add(this.velocity);
-    this.velocity.add(this.acceleration);
+    // this.velocity.add(this.acceleration);
   }
 
   this.render = function() {
+    var core = random(this.r/6, this.r/2);
     push();
-    fill('red');
     translate(this.position.x, this.position.y);
+    fill('red');
     ellipse(0, 0, this.r, this.r);
+    fill('yellow');
+    ellipse(0, 0, core, core);
     pop();
   }
 

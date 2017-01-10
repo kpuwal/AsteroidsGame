@@ -26,15 +26,15 @@ function Asteroid(position, size) {
 
   this.render = function() {
     push();
+    translate(this.position.x, this.position.y);
+
     if (this.r < 35) {
       fill('#1d1d1d');
       stroke('#fff');
     } else {
-      fill('#1d1d1d');
-      strokeWeight(10);
-      stroke('#62B1F6');
+      fill('red');
+      stroke('white');
     }
-    translate(this.position.x, this.position.y);
 
     beginShape();
     for(var i=0; i<this.surfacePoints; i++){
@@ -51,7 +51,7 @@ function Asteroid(position, size) {
   this.breakup = function() {
     var newAsteroids = [];
     if (this.r >35 && this.r <45) {
-      eggPoints.push(new Egg(this.position));
+      eggs.push(new Egg(this.position));
       this.split(newAsteroids);
       return newAsteroids;
     } else {
