@@ -1,7 +1,7 @@
 {
   "name": "asteroids_game",
   "version": "1.0.0",
-  "description": "silly shoot asteroids game",
+  "description": "silly asteroids game",
   "main": "astroServer.js",
 
   "scripts": {
