@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "silly asteroids game",
   "main": "astroServer.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node astroServer.js /dev/cu.SLAB_USBtoUART"
@@ -11,6 +10,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "node-persist": "0.0.11",
+    "p5.serialserver": "0.0.24",
     "serialport": "^4.0.7"
   },
   "devDependencies": {
