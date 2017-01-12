@@ -65,7 +65,7 @@ function Ship() {
 
   this.captures = function(egg) {
     var distance = dist(this.position.x, this.position.y, egg.position.x, egg.position.y);
-    if(int(distance) == egg.r + this.r) {
+    if(int(distance) === egg.r + this.r) {
       return true;
     } else {
       return false;

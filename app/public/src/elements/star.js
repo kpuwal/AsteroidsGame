@@ -1,6 +1,6 @@
 function Star() {
   this.position = createVector(random(width), random(height));
-  this.r = random(3, 8);
+  this.r = random(2, 5);
 
   this.render = function() {
     noStroke();

@@ -1,14 +1,9 @@
-function Planet() {
+function Jupiter() {
   this.position = createVector(random(width), random(height));
   this.velocity = p5.Vector.random2D();
   this.r = 170;
 
   this.render = function() {
-    this.jupiter();
-    // this.saturn();
-  }
-
-  this.jupiter = function() {
     push();
       translate(this.position.x, this.position.y);
       stroke('#3d3d3d');
@@ -28,15 +23,6 @@ function Planet() {
       arc(0, 40, 160, 10, PI, TWO_PI);
       arc(0, 50, 150, 10, PI, TWO_PI);
       arc(0, 55, 160, 10, PI, TWO_PI);
-    pop();
-  }
-
-  this.saturn = function() {
-    push();
-      stroke('#000');
-      strokeWeight(2);
-      fill('#1d1d1d');
-      ellipse(this.position.x, this.position.y, this.r, this.r);
     pop();
   }
 
