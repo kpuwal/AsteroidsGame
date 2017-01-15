@@ -1,4 +1,3 @@
-
 var serialserver = require('p5.serialserver');
 var portName = process.argv[2];
 
@@ -10,7 +9,7 @@ var storage = require('node-persist');
 serialserver.start();
 console.log(" -->  Glove will connect to serial port: " + portName);
 
-app.use(express.static('./app/public'));
+app.use(express.static('./public'));
 app.get('/', function (req, res) {
   res.send(index.html);
 });

@@ -4,7 +4,7 @@
   "description": "silly asteroids game",
   "main": "astroServer.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start tests/karma.conf.js",
     "start": "node astroServer.js /dev/cu.SLAB_USBtoUART"
   },
   "dependencies": {
@@ -13,14 +13,12 @@
     "p5.serialserver": "0.0.24",
     "serialport": "^4.0.7"
   },
-  "devDependencies": {
-    "jasmine": "^2.4.1"
-  },
+  
   "keywords": [
     "shooting",
     "asteroids",
     "game"
   ],
-  "author": "kasiap",
+  "author": "kpuwal",
   "license": "ISC"
 }
