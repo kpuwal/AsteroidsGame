@@ -1,7 +1,7 @@
 var serialserver = require('p5.serialserver');
-var portName = process.argv[2];
-
 var express = require('express');
+
+var portName = process.argv[2];
 var app = express();
 var port = process.env.PORT || 3000;
 var storage = require('node-persist');

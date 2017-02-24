@@ -11,6 +11,7 @@ function serialEvent() {
   sensor = split(inString, ',');
   inData1 = Number(sensor[0]);
   inData2 = Number(sensor[1]);
+  
   inDataX = Number(sensor[2]);
   inDataY = Number(sensor[3]);
   inDataZ = Number(sensor[4]);
