@@ -5,7 +5,7 @@
   "main": "astroServer.js",
   "scripts": {
     "test": "karma start tests/karma.conf.js",
-    "start": "node astroServer.js /dev/cu.SLAB_USBtoUART"
+    "start": "node astroServer.js /dev/cu.Bluetooth-Incoming-Port"
   },
   "dependencies": {
     "express": "^4.14.0",
@@ -13,7 +13,7 @@
     "p5.serialserver": "0.0.24",
     "serialport": "^4.0.7"
   },
-  
+
   "keywords": [
     "shooting",
     "asteroids",

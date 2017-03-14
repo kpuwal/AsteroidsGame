@@ -9,9 +9,10 @@ var asteroidPoints = 0;
 var deadShip = false;
 
 var inString, sensor, inData1, inData2, inDataX, inDataY, inDataZ;
-var portName = '/dev/cu.SLAB_USBtoUART';
+var portName = '/dev/cu.Bluetooth-Incoming-Port';
+// var portName = '/dev/cu.SLAB_USBtoUART';
 
-var options = { baudrate: 9600 };
+var options = { baudrate: 115200 };
 
 function setup() {
   createCanvas(windowWidth*0.99, windowHeight*0.99);
