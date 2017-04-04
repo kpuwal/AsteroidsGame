@@ -1,6 +1,6 @@
 ## Asteroids Game Controlled with DIY Sensor Glove
 
-<img width="100%" alt="screenshot" src="public/img/screenshot.png">
+<img alt="screenshot" src="public/img/screenshot.png">
 
 This small DIY project combines fun of game programming and super exciting capabilities of Arduino boards.
 
@@ -9,7 +9,7 @@ Asteroids game is loosely based on classic arcade space shooter. It is coded in 
 #### The Glove
 The Glove designed as game controller is equipped with five bend sensors placed in fabric veins on top of each finger. Microcontroller mounted on the cuff captures movement in 3D space and sends this information via serial communication to a computer. The data is read by a simple Node.js based WebSocket server API and set as an input to a browser. The glove also includes super vibrant RGB LED ring for visual feedback.
 
-<img width="673" alt="screenshot" src="public/img/glove01.png">
+<img width="674" alt="screenshot" src="public/img/glove00.png">
 
 
 #### Playing the Game
@@ -42,6 +42,9 @@ $ npm start
 #### Third party libraries
 * p5.js JavaScript [library](http://p5js.org/download/)
 * Paul Stoffregen's TimerOne [library](https://github.com/PaulStoffregen/TimerOne)
+
+#### References
+[CodingTrain](https://www.youtube.com/user/shiffman)
 
 ----
 
