@@ -11,9 +11,8 @@
     "express": "^4.14.0",
     "node-persist": "0.0.11",
     "p5.serialserver": "0.0.24",
-    "serialport": "^4.0.7"
+    "serialport": "5.0.0-beta7"
   },
-
   "keywords": [
     "shooting",
     "asteroids",
